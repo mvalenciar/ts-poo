@@ -1,22 +1,8 @@
 (() => {
-  const date = new Date();
-
-  date.getHours();
-  date.getTime();
-  date.toISOString();
-
-  const date2 = new Date(1992, 0, 10);
-  date2.getHours();
-  date2.getTime();
-  date2.toISOString();
-
-  console.log(date);
-  console.log(date2);
-
   class MyDate {
     year: number;
     month: number;
-    day: number;
+    private day: number;
 
     constructor(year: number, month: number, day: number) {
       this.year = year;
@@ -24,8 +10,18 @@
       this.day = day;
     }
 
+    private addPadding(value: number): string {
+      if (value < 10) {
+        return `0${value}`;
+      } else {
+        return `${value}`;
+      }
+    }
+
     printFormat(): string {
-      return `${this.day}/${this.month}/${this.year}`;
+      const day = this.addPadding(this.day);
+      const month = this.addPadding(this.month);
+      return `${day}/${month}/${this.year}`;
     }
 
     add(amount: number, type: "days" | "months" | "years"): void {
@@ -42,11 +38,5 @@
   }
 
   const mydate = new MyDate(2021, 1, 10);
-  console.log(mydate);
-  mydate.add(2, "days");
-
   console.log(mydate.printFormat());
-  console.log(mydate.day);
-  console.log(mydate.month);
-  console.log(mydate.year);
 })();

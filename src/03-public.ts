@@ -13,14 +13,14 @@ class MyDate {
     return `${this.day}/${this.month}/${this.year}`;
   }
 
-  add(amount: number, type: "days" | "months" | "years"): void {
-    if (type === "days") {
+  add(amount: number, type: 'days' | 'months' | 'years'): void {
+    if (type === 'days') {
       this.day += amount;
     }
-    if (type === "months") {
+    if (type === 'months') {
       this.month += amount;
     }
-    if (type === "years") {
+    if (type === 'years') {
       this.year += amount;
     }
   }
