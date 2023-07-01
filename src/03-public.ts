@@ -1,17 +1,3 @@
-const date = new Date();
-
-date.getHours();
-date.getTime();
-date.toISOString();
-
-const date2 = new Date(1992, 0, 10);
-date2.getHours();
-date2.getTime();
-date2.toISOString();
-
-console.log(date);
-console.log(date2);
-
 class MyDate {
   year: number;
   month: number;
@@ -41,10 +27,6 @@ class MyDate {
 }
 
 const mydate = new MyDate(2021, 1, 10);
-console.log(mydate);
-mydate.add(2, "days");
-
-console.log(mydate.printFormat());
 console.log(mydate.day);
-console.log(mydate.month);
-console.log(mydate.year);
+mydate.day = 12;
+console.log(mydate.day);
